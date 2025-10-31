@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 import React, { useState } from 'react';
 import { ProductCategory, ProductModel } from '../types';
 import { PRODUCTS } from '../data';
@@ -25,7 +29,11 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ onSelectModel }) => {
   );
 
   return (
+<<<<<<< HEAD
     <div className="w-full">
+=======
+    <div className="w-full max-w-6xl mx-auto px-4">
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
       <h1 className="text-3xl font-bold text-gray-800 mb-2">Modelos</h1>
       <h2 className="text-xl font-semibold text-gray-700 mb-8">Selecione o seu</h2>
       
@@ -38,6 +46,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ onSelectModel }) => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {filteredProducts.map(model => (
+<<<<<<< HEAD
           <div key={model.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
             <div className="h-48 bg-gray-100 flex items-center justify-center p-4">
                <img 
@@ -46,6 +55,11 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ onSelectModel }) => {
                  className="max-h-full max-w-full object-contain"
                  style={{ maxHeight: '180px' }}
                />
+=======
+          <div key={model.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+            <div className="aspect-w-1 aspect-h-1 w-full bg-gray-200">
+               <img src={model.image} alt={model.name} className="w-full h-full object-cover"/>
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
             </div>
             <div className="p-4 flex flex-col flex-grow">
               <h3 className="font-bold text-gray-800 text-base">{model.name}</h3>
@@ -65,3 +79,7 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({ onSelectModel }) => {
 };
 
 export default ModelSelector;
+<<<<<<< HEAD
+=======
+      
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce

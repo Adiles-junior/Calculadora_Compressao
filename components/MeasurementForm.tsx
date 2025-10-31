@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 import React, { useState } from 'react';
 import { ProductModel, MeasurementValues } from '../types';
 import { MEASUREMENTS } from '../data';
@@ -8,6 +12,11 @@ interface MeasurementFormProps {
   onSubmit: (measurements: MeasurementValues) => void;
 }
 
+<<<<<<< HEAD
+=======
+// Fix: Moved InputField component outside of MeasurementForm to prevent re-creation on each render and fix typing issues.
+// Added value and onChange props to make it a controlled component.
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 interface InputFieldProps {
   id: string;
   value: number | string;
@@ -32,10 +41,16 @@ const InputField: React.FC<InputFieldProps> = ({ id, value, onChange }) => {
               id={id}
               value={value}
               onChange={e => onChange(id, e.target.value)}
+<<<<<<< HEAD
               placeholder={measurement.type === 'shoe_size' ? 'Número do pé' : 'Em cm'}
               className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
               step="0.1"
               min="0"
+=======
+              placeholder="Em cm"
+              className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              step="0.1"
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
           />
       </div>
   );
@@ -56,7 +71,11 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
     const requiredFilled = model.requiredMeasurements.every(id => values[id] !== undefined && values[id] > 0);
 
     if (!requiredFilled) {
+<<<<<<< HEAD
         setError('Por favor, preencha todos os campos de medidas obrigatórias com valores válidos.');
+=======
+        setError('Por favor, preencha todos os campos de medidas obrigatórias.');
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
         return;
     }
     setError('');
@@ -64,13 +83,23 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
   };
 
   return (
+<<<<<<< HEAD
     <div className="w-full">
+=======
+    <div className="w-full max-w-6xl mx-auto px-4">
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
       <h2 className="text-lg font-semibold text-green-700 mb-1">Modelo selecionado</h2>
       <h1 className="text-3xl font-bold text-gray-800 mb-8">{model.name} - {model.description}</h1>
 
       <div className="grid md:grid-cols-2 gap-12">
         <form onSubmit={handleSubmit}>
+<<<<<<< HEAD
           {model.requiredMeasurements.map(id => <InputField key={id} id={id} value={values[id] || ''} onChange={handleInputChange} />)}
+=======
+          {/* Fix: Pass value and onChange handler to the refactored InputField component. */}
+          {model.requiredMeasurements.map(id => <InputField key={id} id={id} value={values[id] || ''} onChange={handleInputChange} />)}
+          {/* Fix: Pass value and onChange handler to the refactored InputField component. */}
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
           {model.specialInputs?.map(id => <InputField key={id} id={id} value={values[id] || ''} onChange={handleInputChange}/>)}
 
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
@@ -96,7 +125,15 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
             {model.notes && (
                 <div className="bg-gray-100 p-6 rounded-lg mb-8">
                     <h3 className="font-bold text-lg mb-2 text-gray-800">Observações</h3>
+<<<<<<< HEAD
                     <div className="text-sm text-gray-600 space-y-2" dangerouslySetInnerHTML={{ __html: model.notes }}>
+=======
+                    <div className="text-sm text-gray-600 space-y-2">
+                        <p><strong>Tornozelo:</strong> A circunferência 2 dedos acima do maléolo (osso proeminente do tornozelo)</p>
+                        <p><strong>Panturrilha:</strong> A circunferência mais larga da panturrilha</p>
+                        <p><strong>Coxa:</strong> 4 dedos abaixo da prega glútea</p>
+                        <p><strong>Altura:</strong> Do chão até 4 dedos abaixo da prega glútea</p>
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
                     </div>
                 </div>
             )}

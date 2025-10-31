@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 import React from 'react';
 import { ProductModel, SizingResult, MeasurementValues } from '../types';
 import { MEASUREMENTS } from '../data';
 
+<<<<<<< HEAD
 // Função para obter o caminho da imagem da caixa com base no nome do produto
 const getBoxImagePath = (productLine: string, side: 'left' | 'right') => {
   // Mapeia os nomes dos produtos para os nomes dos arquivos
@@ -59,6 +64,8 @@ const getBoxImagePath = (productLine: string, side: 'left' | 'right') => {
   }
 };
 
+=======
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 interface ResultDisplayProps {
   model: ProductModel;
   results: SizingResult[];
@@ -68,7 +75,11 @@ interface ResultDisplayProps {
 
 const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measurements, onStartOver }) => {
   return (
+<<<<<<< HEAD
     <div className="w-full max-w-4xl mx-auto">
+=======
+    <div className="w-full max-w-4xl mx-auto px-4 py-8">
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
       <div className="bg-white p-8 rounded-xl shadow-lg">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Seu Tamanho Ideal</h1>
         <p className="text-gray-600 mb-6">Com base nas medidas fornecidas, encontramos as seguintes recomendações para o modelo <span className="font-bold">{model.name}</span>:</p>
@@ -77,7 +88,11 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
             <h3 className="font-semibold text-lg mb-2">Suas Medidas:</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
                 {Object.entries(measurements).map(([key, value]) => (
+<<<<<<< HEAD
                     value && <div key={key}>
+=======
+                    <div key={key}>
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
                         <span className="font-semibold text-gray-600">{MEASUREMENTS[key]?.description || key}:</span>{' '}
                         <span className="text-gray-800">{value} {key === 'SHOE_SIZE' ? '' : 'cm'}</span>
                     </div>
@@ -88,6 +103,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
         {results.length > 0 ? (
           <div className="space-y-6">
             {results.map((result, index) => (
+<<<<<<< HEAD
               <div key={index} className="bg-white border-l-4 border-green-500 p-4 rounded-lg shadow-md">
                 <div className="flex flex-col md:flex-row gap-4">
                   {/* Imagens das caixas */}
@@ -133,6 +149,15 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
                     </button>
                   </div>
                 </div>
+=======
+              <div key={index} className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                <p className="text-sm font-semibold text-green-700">{result.productLine}</p>
+                <p className="text-2xl font-bold text-gray-800">
+                  Tamanho: {result.size}
+                  {result.length && `, ${result.length}`}
+                </p>
+                {result.notes && <p className="text-sm text-gray-600 mt-2">{result.notes}</p>}
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
               </div>
             ))}
           </div>
@@ -159,3 +184,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
 };
 
 export default ResultDisplay;
+<<<<<<< HEAD
+=======
+      
+>>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
