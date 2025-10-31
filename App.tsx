@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
 import React, { useState } from 'react';
 import { AppStep, ProductModel, MeasurementValues, SizingResult } from './types';
 import Stepper from './components/Stepper';
@@ -41,25 +37,15 @@ const App: React.FC = () => {
         setResults(calculatedResults);
         setStep(AppStep.RESULT_DISPLAY);
         setIsLoading(false);
-<<<<<<< HEAD
     }, 500);
-=======
-    }, 1000);
->>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
   };
 
   const renderContent = () => {
     if (isLoading) {
         return (
-<<<<<<< HEAD
             <div className="flex flex-col items-center justify-center text-center h-96">
                 <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-green-600"></div>
                 <p className="mt-6 text-lg font-semibold text-gray-700">Calculando seu tamanho ideal...</p>
-=======
-            <div className="flex flex-col items-center justify-center text-center h-64">
-                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-600"></div>
-                <p className="mt-4 text-lg font-semibold text-gray-700">Calculando seu tamanho ideal...</p>
->>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
             </div>
         );
     }
@@ -83,8 +69,7 @@ const App: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-     <div className="min-h-screen text-gray-800 bg-gray-100" style={{ backgroundImage: "url('/img/IMAGEM DE TELA DE FUNDO.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen text-gray-800 bg-gray-100" style={{ backgroundImage: "url('/img/IMAGEM DE TELA DE FUNDO.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="container mx-auto px-4">
         <header className="py-6 flex justify-center items-center bg-white/80 rounded-b-xl shadow-md">
             <img src="/img/LOGOTIPO.png" alt="Logotipo" className="h-16 sm:h-20 object-contain" />
@@ -99,21 +84,8 @@ const App: React.FC = () => {
       <footer className="text-center py-4 text-gray-600 text-sm bg-white/80 mt-8">
         © {new Date().getFullYear()} Venosan Brasil LTDA 2025
       </footer>
-=======
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      <main className="container mx-auto">
-        <Stepper currentStep={step} />
-        <div className="pb-16">
-            {renderContent()}
-        </div>
-      </main>
->>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
     </div>
   );
 };
 
 export default App;
-<<<<<<< HEAD
-=======
-      
->>>>>>> aae6eeb8490a1a19de1d6b2c663b4caba26188ce
