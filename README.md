@@ -1,5 +1,4 @@
 <div align="center">
-<<<<<<< HEAD
   <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/LOGOTIPO.png" alt="Logotipo da Aplicação" width="300"/>
   <h1>Calculadora de Tamanho para Meias de Compressão</h1>
   <p>Solução completa para determinação do tamanho ideal de meias de compressão médica e produtos ReadyWrap</p>
