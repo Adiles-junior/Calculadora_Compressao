@@ -18,68 +18,82 @@ const getAssetPath = (path: string) => {
 
 export const MEASUREMENTS: { [key: string]: Measurement } = {
     // Circumferences
-    cA: { id: 'cA', type: 'circumference', name: 'Circunferência', description: 'PARTE DA FRENTE DO PÉ' },
-    cA1: { id: 'cA1', type: 'circumference', name: 'Circunferência', description: 'PARTE DO MEIO DO PÉ' },
-    cB: { id: 'cB', type: 'circumference', name: 'Circunferência', description: 'TORNOZELO' },
-    cC: { id: 'cC', type: 'circumference', name: 'Circunferência', description: 'PANTURRILHA' },
-    cD: { id: 'cD', type: 'circumference', name: 'Circunferência', description: 'ABAIXO DO JOELHO' },
-    cE: { id: 'cE', type: 'circumference', name: 'Circunferência', description: 'ACIMA DO JOELHO' },
-    cF: { id: 'cF', type: 'circumference', name: 'Circunferência', description: 'BRAÇO' },
-    cG: { id: 'cG', type: 'circumference', name: 'Circunferência', description: 'COXA' },
-    cH: { id: 'cH', type: 'circumference', name: 'Circunferência', description: 'QUADRIL' },
+    cA: { id: 'cA', type: 'circumference', name: 'Circunferência (cA)', description: 'Articulação metatarsofalangeana' },
+    cA1: { id: 'cA1', type: 'circumference', name: 'Circunferência (cA1)', description: 'Ponto mais alto do peito do pé' },
+    cB: { id: 'cB', type: 'circumference', name: 'Circunferência (cB)', description: 'Tornozelo' },
+    cC: { id: 'cC', type: 'circumference', name: 'Circunferência (cC)', description: 'Panturrilha' },
+    cD: { id: 'cD', type: 'circumference', name: 'Circunferência (cD)', description: 'Abaixo do joelho' },
+    cE: { id: 'cE', type: 'circumference', name: 'Circunferência (cE)', description: 'Meio da coxa / Acima do joelho' },
+    cF: { id: 'cF', type: 'circumference', name: 'Circunferência (cF)', description: 'Braço' },
+    cG: { id: 'cG', type: 'circumference', name: 'Circunferência (cG)', description: 'Coxa / Topo do braço' },
+    cH: { id: 'cH', type: 'circumference', name: 'Circunferência (cH)', description: 'Quadril' },
 
     // Lengths
-    AD: { id: 'AD', type: 'length', name: 'Comprimento', description: 'SOLA DO PÉ ATÉ ABAIXO DO JOELHO' },
-    AG: { id: 'AG', type: 'length', name: 'Comprimento', description: 'SOLA DO PÉ ATÉ A COXA' },
-    AY: { id: 'AY', type: 'length', name: 'Comprimento', description: 'SOLA DO PÉ' },
-    BD: { id: 'BD', type: 'length', name: 'Comprimento', description: 'TORNOZELO ATÉ ABAIXO DO JOELHO' },
-    BG: { id: 'BG', type: 'length', name: 'Comprimento', description: 'BRAÇO ATÉ O PUNHO' },
-    BH: { id: 'BH', type: 'length', name: 'Comprimento', description: 'BRAÇADEIRA ATÉ O PUNHO' },
-    ZH: { id: 'ZH', type: 'length', name: 'Comprimento', description: 'BRAÇADEIRA ATÉ O METACARPO COM O POLEGAR' },
-    AB: { id: 'AB', type: 'length', name: 'Comprimento', description: 'PUNHO ATÉ O METACARPO' },
-    EG: { id: 'EG', type: 'length', name: 'Comprimento', description: 'COXA ATÉ ACIMA DO JOELHO' },
+    AD: { id: 'AD', type: 'length', name: 'Comprimento (AD)', description: 'Sola do pé até abaixo do joelho' },
+    AG: { id: 'AG', type: 'length', name: 'Comprimento (AG)', description: 'Sola do pé até a coxa' },
+    AY: { id: 'AY', type: 'length', name: 'Comprimento (AY)', description: 'Sola do pé (calcanhar à ponta)' },
+    BD: { id: 'BD', type: 'length', name: 'Comprimento (BD)', description: 'Tornozelo até abaixo do joelho' },
+    BG: { id: 'BG', type: 'length', name: 'Comprimento (BG)', description: 'Braço (axila até o punho)' },
+    BH: { id: 'BH', type: 'length', name: 'Comprimento (BH)', description: 'Braçadeira (ombro até o punho)' },
+    AB: { id: 'AB', type: 'length', name: 'Comprimento (AB)', description: 'Punho até o metacarpo' },
+    EG: { id: 'EG', type: 'length', name: 'Comprimento (EG)', description: 'Da virilha até acima do joelho' },
+
+    // ReadyWrap specific lengths
+    iAY: { id: 'iAY', type: 'length', name: 'Comprimento (iAY)', description: 'Comprimento do pé (ReadyWrap)' },
+    iBD: { id: 'iBD', type: 'length', name: 'Comprimento (iBD)', description: 'Comprimento da panturrilha (ReadyWrap)' },
+    iEG: { id: 'iEG', type: 'length', name: 'Comprimento (iEG)', description: 'Comprimento da coxa (ReadyWrap)' },
+    iBG: { id: 'iBG', type: 'length', name: 'Comprimento (iBG)', description: 'Comprimento do braço (ReadyWrap)' },
+    iAB: { id: 'iAB', type: 'length', name: 'Comprimento (iAB)', description: 'Comprimento da mão (ReadyWrap)' },
+
 
     // Special
-    SHOE_SIZE: { id: 'SHOE_SIZE', type: 'shoe_size', name: 'Tamanho do calçado', description: 'APENAS PARA CONSULTA DA MEIA SUPPORTLINE' },
+    SHOE_SIZE: { id: 'SHOE_SIZE', type: 'shoe_size', name: 'Tamanho do calçado', description: 'Número do calçado (Brasil)' },
 };
 
 export const PRODUCTS: ProductModel[] = [
     // Meias de Compressão
     { id: 'BD', name: 'BD', description: 'Polaina', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/BD.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/BD_PANTURRILHA.svg'), requiredMeasurements: ['AD', 'cD', 'cC', 'cB'] },
-    { id: 'AD', name: 'AD', description: 'Panturrilha', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AD.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AD_PANTURRILHA.svg'), requiredMeasurements: ['AD', 'cD', 'cC', 'cB'] },
-    { id: 'AGH', name: 'AGH', description: 'Meia-Coxa com silicone', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AGH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AGH.png'), requiredMeasurements: ['AG', 'cG', 'cD', 'cC', 'cB'] },
-    { id: 'AT', name: 'AT', description: 'Meia-Calça', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AT.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AT.png'), requiredMeasurements: ['AG', 'cG', 'cD', 'cC', 'cB'] },
+    { id: 'AD', name: 'AD', description: 'Panturrilha', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AD.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AD_PANTURRILHA.svg'), requiredMeasurements: ['AD', 'cD', 'cC', 'cB'], specialInputs: ['SHOE_SIZE'] },
+    { id: 'AGH', name: 'AGH', description: 'Meia-Coxa com silicone', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AGH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AGH.png'), requiredMeasurements: ['AG', 'cG', 'cC', 'cB'] },
+    { id: 'AT', name: 'AT', description: 'Meia-Calça', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AT.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AT.png'), requiredMeasurements: ['AG', 'cG', 'cC', 'cB'] },
     { id: 'ATQ', name: 'ATQ', description: 'Meia-Calça Queen', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/ATQ.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/ATQ.png'), requiredMeasurements: ['AG', 'cH', 'cG', 'cC', 'cB'] },
-    { id: 'ATM', name: 'ATM', description: 'Meia-Calça gestante', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/ATM.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/ATM.png'), requiredMeasurements: ['AG', 'cH', 'cG', 'cD', 'cC', 'cB'] },
-    { id: 'AGG', name: 'AGG', description: 'Meia-Calça com cinta', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AGG.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AGG.png'), requiredMeasurements: ['AG', 'cG', 'cD', 'cC', 'cB'] },
-    { id: 'BH', name: 'BH', description: 'Braçadeira até o punho', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/BH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/BH.png'), requiredMeasurements: ['BH', 'cF', 'cD', 'cB'] },
-    { id: 'ZH', name: 'ZH', description: 'Braçadeira até o metacarpo com polegar', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/ZH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/ZH.png'), requiredMeasurements: ['ZH', 'cF', 'cD', 'cB'] },
+    { id: 'ATM', name: 'ATM', description: 'Meia-Calça Gestante', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/ATM.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AT.png'), requiredMeasurements: ['AG', 'cG', 'cC', 'cB'] },
+    { id: 'AGG', name: 'AGG', description: 'Meia-Coxa com cinta', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/AGG.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/AGH.png'), requiredMeasurements: ['AG', 'cG', 'cC', 'cB'] },
+    { id: 'BH', name: 'BH', description: 'Braçadeira', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/BH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/b36642fb34c8bc534d7b4f12aa28ce1fbf15e4c6/img/MEDIDAS_MEIAS/BH.png'), requiredMeasurements: ['BH', 'cF', 'cD', 'cB'] },
+    { id: 'ZH', name: 'ZH', description: 'Braçadeira c/ Polegar', category: ProductCategory.COMPRESSION_STOCKINGS, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEIAS_E_BRACADEIRAS_COMPRESSIVAS/ZH.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_MEIAS/ZH.png'), requiredMeasurements: ['BH', 'cF', 'cD', 'cB'] },
     
     // ReadyWrap
-    { id: 'BRACO', name: 'BRAÇO', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/BRACO_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_BRACO.png'), requiredMeasurements: ['BG', 'cG', 'cE', 'cB'] },
-    { id: 'COXA', name: 'COXA', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/COXA_FRENTE_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_COXA.png'), requiredMeasurements: ['EG', 'cG', 'cE'] },
-    { id: 'LUVA', name: 'LUVA', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/LUVA_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_LUVA.png'), requiredMeasurements: ['AB', 'cB', 'cA'] },
-    { id: 'JOELHOS', name: 'JOELHO', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/JOELHO_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_JOELHO.png'), requiredMeasurements: ['cE', 'cD'] },
-    { id: 'DEDOS_DO_PE', name: 'DEDOS DO PÉ', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/DEDOS_DO_PE_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE.png'), requiredMeasurements: ['cA'] },
-    { id: 'PANTURRILHA_RW', name: 'PANTURRILHA', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PANTURRILHA_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PANTURRILHA.png'), requiredMeasurements: ['BD', 'cC', 'cB'] },
-    { id: 'PE_CT', name: 'PÉ CT', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PE_CT_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE_CT.png'), requiredMeasurements: ['AY', 'cA', 'cA1', 'cB'] },
-    { id: 'PE_SL', name: 'PÉ SL', description: '', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PE_SL_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE_SL.png'), requiredMeasurements: ['AY', 'cA1', 'cB'] }
+    { id: 'BRACO', name: 'BRAÇO', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/BRACO_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_BRACO.png'), requiredMeasurements: ['iBG', 'cG', 'cE', 'cB'] },
+    { id: 'COXA', name: 'COXA', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/COXA_FRENTE_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_COXA.png'), requiredMeasurements: ['iEG', 'cG', 'cE'] },
+    { id: 'LUVA', name: 'LUVA', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/LUVA_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_LUVA.png'), requiredMeasurements: ['iAB', 'cB', 'cA'] },
+    { id: 'JOELHOS', name: 'JOELHO', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/JOELHO_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_JOELHO.png'), requiredMeasurements: ['cE', 'cD'] },
+    { id: 'DEDOS_DO_PE', name: 'DEDOS DO PÉ', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/DEDOS_DO_PE_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE.png'), requiredMeasurements: ['cA'] },
+    { id: 'PANTURRILHA_RW', name: 'PANTURRILHA', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PANTURRILHA_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PANTURRILHA.png'), requiredMeasurements: ['iBD', 'cC', 'cB'] },
+    { id: 'PE_CT', name: 'PÉ CT', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PE_CT_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE_CT.png'), requiredMeasurements: ['iAY', 'cA', 'cA1', 'cB'] },
+    { id: 'PE_SL', name: 'PÉ SL', description: 'ReadyWrap', category: ProductCategory.READY_WRAP, image: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/READYWRAP/PE_SL_READYWRAP.png'), diagram: getAssetPath('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/MEDIDAS_RW/MEDIDAS_PE_SL.png'), requiredMeasurements: ['iAY', 'cA1', 'cB'] }
 ];
 
 // ===================================================================================
 // UTILITY FUNCTIONS
 // ===================================================================================
 
+const checkRange = (value: number | undefined, min: number, max: number): boolean => {
+    return value !== undefined && value >= min && value <= max;
+};
+
 const findSize = (sizes: string[], measurements: { value?: number; ranges: (number[] | null)[] }[]): string | null => {
+    // If no measurements are provided, we can't determine a size.
     if (measurements.every(m => m.value === undefined || m.value === null || isNaN(m.value))) {
         return null;
     }
     for (let i = 0; i < sizes.length; i++) {
         const isMatch = measurements.every(m => {
+            // If this measurement wasn't provided, it's a "pass" for this check
             if (m.value === undefined || m.value === null || isNaN(m.value)) {
                 return true;
             }
             const range = m.ranges[i];
+            // If there's no range for this size, it's also a "pass"
             if (!range) {
                 return true;
             }
@@ -92,15 +106,9 @@ const findSize = (sizes: string[], measurements: { value?: number; ranges: (numb
     return null;
 };
 
-const checkRange = (value: number | undefined, min: number, max: number): boolean => {
-    return value !== undefined && value >= min && value <= max;
-};
-
 // ===================================================================================
 // SIZING LOGIC FOR EACH PRODUCT LINE
 // ===================================================================================
-
-// --- LEG SIZING FUNCTIONS ---
 
 const findLeglineSize = (m: MeasurementValues): SizingResult | null => {
     const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
@@ -118,10 +126,12 @@ const findLeglineSize = (m: MeasurementValues): SizingResult | null => {
     if (!size) return null;
 
     let length;
-    if (m.AD && checkRange(m.AD, 37, 43)) length = "NORMAL";
-    if (m.AG && checkRange(m.AG, 68, 80)) length = "NORMAL";
+    if (m.AD !== undefined && checkRange(m.AD, 37, 43)) length = "NORMAL";
+    else if (m.AG !== undefined && checkRange(m.AG, 68, 80)) length = "NORMAL";
+    else if (m.AG === undefined && m.AD === undefined) length = "N/A";
+    else return null; // Length does not match
     
-    return { productLine: 'LEGLINE', size, length };
+    return { productLine: isQueenModel ? 'LEGLINE QUEEN' : 'LEGLINE', size, length };
 };
 
 const findUltraline4000LegSize = (m: MeasurementValues): SizingResult | null => {
@@ -133,55 +143,77 @@ const findUltraline4000LegSize = (m: MeasurementValues): SizingResult | null => 
         { value: m.cG, ranges: [[48, 63], [54, 67], [58, 72], [63, 74], null] },
     ]);
     if (!size) return null;
+
     let length;
-    if (m.AD) length = checkRange(m.AD, 35, 40) ? "CURTA" : checkRange(m.AD, 37, 43) ? "NORMAL" : undefined;
-    if (m.AG) length = checkRange(m.AG, 63, 69) ? "CURTA" : checkRange(m.AG, 68, 80) ? "NORMAL" : undefined;
+    if (m.AD !== undefined) {
+        if(checkRange(m.AD, 35, 40)) length = "CURTA";
+        else if (checkRange(m.AD, 37, 43)) length = "NORMAL";
+    }
+    if (m.AG !== undefined) {
+        if(checkRange(m.AG, 63, 69)) length = "CURTA";
+        else if(checkRange(m.AG, 68, 80)) length = "NORMAL";
+    }
+    if (!length) return null; // No matching length
+
     return { productLine: 'ULTRALINE 4000', size, length };
 };
 
-const findVenosan6000Size = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
+const findUltraline4000ArmSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
     const size = findSize(SIZES, [
-        { value: m.cB, ranges: [[18, 21], [21, 25], [25, 29], [29, 33], [33, 38]] },
-        { value: m.cC, ranges: [[28, 38], [30, 42], [32, 46], [34, 50], [43, 55]] },
-        { value: m.cG, ranges: [[40, 62], [46, 70], [54, 78], [60, 81], null] },
+        { value: m.cB, ranges: [[14, 17], [17, 20], [20, 23]] },
+        { value: m.cD, ranges: [[22, 26], [26, 30], [30, 34]] },
+        { value: m.cF, ranges: [[24, 30], [30, 36], [36, 42]] },
     ]);
-    if(!size) return null;
-    let length;
-    if (m.AD && checkRange(m.AD, 37, 43)) length = "NORMAL";
-    if (m.AG && checkRange(m.AG, 68, 80)) length = "NORMAL";
-    return { productLine: 'VENOSAN 6000', size, length };
+    return size ? { productLine: 'ULTRALINE 4000', size } : null;
 };
 
 const findComfortlineCottonLegSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES_LEG = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
-    const sizeLeg = findSize(SIZES_LEG, [
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
+    const size = findSize(SIZES, [
         { value: m.cB, ranges: [[19, 23], [23, 26], [26, 29], [29, 32], [32, 35]] },
         { value: m.cC, ranges: [[30, 38], [35, 43], [39, 47], [48, 56], [54, 62]] },
         { value: m.cD, ranges: [[28, 36], [33, 41], [37, 45], [46, 54], [52, 60]] },
     ]);
-    if (!sizeLeg) return null;
+    if (!size) return null;
     let length;
-    if (m.SHOE_SIZE !== undefined) length = m.SHOE_SIZE <= 39 ? "CURTA" : "LONGA";
-    return { productLine: 'COMFORTLINE COTTON', size: sizeLeg, length };
+    if (m.AD !== undefined) length = m.AD <= 39 ? "CURTA" : "LONGA";
+    if (!length) return null;
+    return { productLine: 'COMFORTLINE COTTON', size, length };
+};
+
+const findComfortlineCottonArmSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[14, 17], [17, 20], [20, 23]] },
+        { value: m.cD, ranges: [[22, 26], [26, 30], [30, 34]] },
+        { value: m.cF, ranges: [[24, 30], [30, 36], [36, 42]] },
+    ]);
+    if (!size) return null;
+    let length;
+    if (m.BH !== undefined) length = m.BH <= 58 ? "CURTA" : "LONGA";
+    if (!length) return null;
+    return { productLine: 'COMFORTLINE COTTON', size, length };
 };
 
 const findComfortlineLegSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES_LEG = ['PEQUENO', 'MÉDIO', 'GRANDE'];
-    const sizeLeg = findSize(SIZES_LEG, [
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
+    const size = findSize(SIZES, [
         { value: m.cB, ranges: [[19, 23], [23, 26], [26, 29]] },
         { value: m.cC, ranges: [[30, 38], [35, 43], [39, 47]] },
         { value: m.cD, ranges: [[28, 36], [33, 41], [37, 45]] },
         { value: m.cG, ranges: [[49, 61], [54, 66], [60, 72]] },
     ]);
-    if (!sizeLeg) return null;
+    if (!size) return null;
     let length;
-    if (m.AD !== undefined && m.SHOE_SIZE !== undefined) length = m.SHOE_SIZE <= 39 ? "CURTA" : "LONGA";
+    if (m.AD !== undefined) length = m.AD <= 39 ? "CURTA" : "LONGA";
     if (m.AG !== undefined) length = m.AG <= 72 ? "CURTA" : "LONGA";
-    return { productLine: 'COMFORTLINE', size: sizeLeg, length };
+    if (!length) return null;
+    return { productLine: 'COMFORTLINE', size, length };
 };
 
 const findSupportlineSoftSize = (m: MeasurementValues): SizingResult | null => {
+    if (m.SHOE_SIZE === undefined) return null;
     const SIZES = ['PP', 'P', 'M', 'G', 'XG'];
     const size = findSize(SIZES, [
         { value: m.SHOE_SIZE, ranges: [[34, 36], [37, 38], [39, 41], [42, 44], [45, 47]] },
@@ -191,8 +223,23 @@ const findSupportlineSoftSize = (m: MeasurementValues): SizingResult | null => {
     return size ? { productLine: 'SUPPORTLINE SOFT', size } : null;
 };
 
+const findVenosan6000Size = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[18, 21], [21, 25], [25, 29], [29, 33], [33, 38]] },
+        { value: m.cC, ranges: [[28, 38], [30, 42], [32, 46], [34, 50], [43, 55]] },
+        { value: m.cG, ranges: [[40, 62], [46, 70], [54, 78], [60, 81], null] },
+    ]);
+    if (!size) return null;
+    let length;
+    if (m.AD !== undefined && checkRange(m.AD, 37, 43)) length = "NORMAL";
+    if (m.AG !== undefined && checkRange(m.AG, 68, 80)) length = "NORMAL";
+    if (!length) return null;
+    return { productLine: 'VENOSAN 6000', size, length };
+};
+
 const findSportactiveSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MEDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
     const size = findSize(SIZES, [
         { value: m.cB, ranges: [[18, 23], [23, 26], [26, 29], [29, 32], [32, 38]] },
         { value: m.cC, ranges: [[28, 39], [33, 42], [36, 45], [39, 50], [43, 55]] },
@@ -201,268 +248,276 @@ const findSportactiveSize = (m: MeasurementValues): SizingResult | null => {
     return size ? { productLine: 'SPORTACTIVE', size } : null;
 };
 
-const findFlatSize = (m: MeasurementValues): SizingResult[] => {
-    const results: SizingResult[] = [];
-    
-    // Tamanho baseado no comprimento do pé
-    if (m.AY !== undefined) {
-        let size: string | null = null;
-        if (m.AY >= 19 && m.AY <= 22) size = 'P';
-        else if (m.AY > 22 && m.AY <= 26) size = 'M';
-        else if (m.AY > 26 && m.AY <= 30) size = 'G';
-        
-        if (size) {
-            results.push({
-                productLine: 'FLAT',
-                size,
-                length: 'PADRÃO'
-            });
-        }
+const findFlatSize = (m: MeasurementValues, productLine: 'FLAT SOFT' | 'FLAT STRONG'): SizingResult | null => {
+    const SIZES = ['X-PEQUENO', 'PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE', 'XXX-GRANDE'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[18, 20], [20, 22], [22, 24], [24, 26], [26, 28], [28, 31], [31, 35]] },
+        { value: m.cC, ranges: [[29.5, 34.5], [32.5, 37.5], [35.5, 40.5], [38.5, 43.5], [41.5, 46.5], [42.5, 47.5], [45, 51]] },
+        { value: m.cD, ranges: [[27.5, 32.5], [30.5, 35.5], [33.5, 38.5], [36.5, 41.5], [39.5, 44.5], [40.5, 45.5], [43, 49]] },
+    ]);
+    if (!size) return null;
+    let length;
+    if (m.AD !== undefined) {
+        if(checkRange(m.AD, 34, 40)) length = "CURTA";
+        else if (checkRange(m.AD, 40, 46)) length = "LONGA";
     }
-    
-    return results;
+    if (!length) return null;
+    return { productLine, size, length };
 };
 
-const findUlcerKitSize = (m: MeasurementValues): SizingResult[] => {
-    const results: SizingResult[] = [];
-    
-    // Tamanho baseado nas medidas de circunferência
-    if (m.cB !== undefined && m.cC !== undefined) {
-        let size: string | null = null;
-        
-        if (m.cB >= 15 && m.cB <= 25 && m.cC >= 25 && m.cC <= 35) {
-            size = 'PEQUENO';
-        } else if (m.cB > 20 && m.cB <= 30 && m.cC > 30 && m.cC <= 40) {
-            size = 'MÉDIO';
-        } else if (m.cB > 25 && m.cB <= 35 && m.cC > 35 && m.cC <= 45) {
-            size = 'GRANDE';
-        } else if (m.cB > 30 && m.cB <= 40 && m.cC > 40 && m.cC <= 50) {
-            size = 'X-GRANDE';
-        }
-        
-        if (size) {
-            results.push({
-                productLine: 'ULCER KIT',
-                size,
-                length: 'PADRÃO'
-            });
-        }
-    }
-    
-    return results;
+const findUlcercomfortSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[19, 23], [23, 26], [26, 29], [29, 32]] },
+        { value: m.cC, ranges: [[30, 38], [35, 43], [39, 47], [48, 56]] },
+        { value: m.cD, ranges: [[28, 36], [33, 41], [37, 45], [46, 54]] },
+    ]);
+    if (!size) return null;
+    let length;
+    if (m.AD !== undefined) length = m.AD <= 39 ? "CURTA" : "LONGA";
+    if (!length) return null;
+    return { productLine: 'ULCERCOMFORT', size, length };
+};
+
+const findUlceraidSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[18, 23], [23, 26], [26, 29], [29, 32]] },
+        { value: m.cC, ranges: [[28, 39], [33, 42], [36, 45], [39, 50]] },
+        { value: m.cD, ranges: [[28, 38], [32, 41], [35, 44], [38, 46]] },
+    ]);
+    if (!size) return null;
+    if (m.AD && !checkRange(m.AD, 37, 43)) return null;
+    return { productLine: 'ULCERAID', size };
 };
 
 const findAesSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
-    const size = findSize(SIZES, [
-        { value: m.cB, ranges: [[18, 22], [22, 26], [26, 30]] },
-        { value: m.cC, ranges: [[28, 36], [36, 44], [44, 52]] },
-    ]);
-    return size ? { productLine: 'AES', size } : null;
-};
+    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE', 'XX-GRANDE'];
+    const sizeData = [
+        { size: 'PEQUENO', cB: [18, 20], cC: [28, 32], cG: [45, 64], adLimit: 41, agLimit: 0 },
+        { size: 'MÉDIO', cB: [20, 22], cC: [32, 37], cG: [53, 71], adLimit: 43, agLimit: 0 },
+        { size: 'GRANDE', cB: [23, 25], cC: [37, 42], cG: [61, 80], adLimit: 45, agLimit: 0 },
+        { size: 'X-GRANDE', cB: [25, 27], cC: [42, 47], cG: [70, 84], adLimit: 45, agLimit: 0 },
+        { size: 'XX-GRANDE', cB: [28, 30], cC: [47, 52], cG: [79, 88], adLimit: 45, agLimit: [74, 79] },
+    ];
 
-// --- ARM SIZING FUNCTIONS ---
-
-const findUltraline4000ArmSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE', 'X-GRANDE'];
-    const size = findSize(SIZES, [
-        { value: m.cB, ranges: [[15, 18], [18, 21], [21, 24], [24, 27]] },
-        { value: m.cF, ranges: [[18, 24], [24, 30], [30, 36], [36, 42]] },
-    ]);
-    return size ? { productLine: 'ULTRALINE 4000 ARM', size } : null;
-};
-
-const findComfortlineCottonArmSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
-    const size = findSize(SIZES, [
-        { value: m.cB, ranges: [[15, 19], [19, 23], [23, 27]] },
-        { value: m.cF, ranges: [[20, 28], [28, 36], [36, 44]] },
-    ]);
-    if (!size) return null;
-    
-    let length;
-    if (m.BG && checkRange(m.BG, 45, 52)) length = "CURTA";
-    else if (m.BG && checkRange(m.BG, 53, 60)) length = "LONGA";
-    
-    return { productLine: 'COMFORTLINE COTTON ARM', size, length };
-};
-
-const findComfortlineArmSize = (m: MeasurementValues): SizingResult | null => {
-    const SIZES = ['PEQUENO', 'MÉDIO', 'GRANDE'];
-    const size = findSize(SIZES, [
-        { value: m.cB, ranges: [[15, 19], [19, 23], [23, 27]] },
-        { value: m.cF, ranges: [[20, 28], [28, 36], [36, 44]] },
-    ]);
-    if (!size) return null;
-    
-    let length;
-    if (m.BG && checkRange(m.BG, 45, 52)) length = "CURTA";
-    else if (m.BG && checkRange(m.BG, 53, 60)) length = "LONGA";
-    
-    return { productLine: 'COMFORTLINE ARM', size, length };
-};
-
-// --- READYWRAP SIZING FUNCTION ---
-
-const findReadyWrapSize = (modelId: string, m: MeasurementValues): SizingResult | null => {
-    switch (modelId) {
-        case 'BRACO':
-            if (!m.BG || !m.cG || !m.cE || !m.cB) return null;
-            // Lógica de tamanho para BRAÇO
-            if (m.BG <= 50 && m.cG <= 30 && m.cE <= 28 && m.cB <= 22) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.BG <= 60 && m.cG <= 40 && m.cE <= 35 && m.cB <= 26) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.BG <= 70 && m.cG <= 50 && m.cE <= 42 && m.cB <= 30) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
+    for (const s of sizeData) {
+        const cB_OK = checkRange(m.cB, s.cB[0], s.cB[1]);
+        const cC_OK = checkRange(m.cC, s.cC[0], s.cC[1]);
+        const cG_OK = m.cG === undefined || checkRange(m.cG, s.cG[0], s.cG[1]);
+        
+        if (cB_OK && cC_OK && cG_OK) {
+            const ad_OK = m.AD === undefined || (m.AD <= s.adLimit);
+            const ag_OK = m.AG === undefined || (s.agLimit !== 0 && checkRange(m.AG, s.agLimit[0], s.agLimit[1]));
+            if (ad_OK || ag_OK) {
+                 return { productLine: 'AES', size: s.size };
             }
-            break;
-            
-        case 'COXA':
-            if (!m.EG || !m.cG || !m.cE) return null;
-            // Lógica de tamanho para COXA
-            if (m.EG <= 40 && m.cG <= 50 && m.cE <= 40) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.EG <= 50 && m.cG <= 60 && m.cE <= 50) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.EG <= 60 && m.cG <= 70 && m.cE <= 60) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'LUVA':
-            if (!m.AB || !m.cB || !m.cA) return null;
-            // Lógica de tamanho para LUVA
-            if (m.AB <= 15 && m.cB <= 18 && m.cA <= 20) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.AB <= 18 && m.cB <= 22 && m.cA <= 24) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.AB <= 21 && m.cB <= 26 && m.cA <= 28) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'JOELHOS':
-            if (!m.cE || !m.cD) return null;
-            // Lógica de tamanho para JOELHOS
-            if (m.cE <= 35 && m.cD <= 40) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.cE <= 45 && m.cD <= 50) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.cE <= 55 && m.cD <= 60) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'DEDOS_DO_PE':
-            if (!m.cA) return null;
-            // Lógica de tamanho para DEDOS DO PÉ
-            if (m.cA <= 20) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.cA <= 25) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.cA <= 30) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'PANTURRILHA_RW':
-            if (!m.BD || !m.cC || !m.cB) return null;
-            // Lógica de tamanho para PANTURRILHA
-            if (m.BD <= 40 && m.cC <= 35 && m.cB <= 25) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.BD <= 50 && m.cC <= 45 && m.cB <= 30) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.BD <= 60 && m.cC <= 55 && m.cB <= 35) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'PE_CT':
-            if (!m.AY || !m.cA || !m.cA1 || !m.cB) return null;
-            // Lógica de tamanho para PÉ CT
-            if (m.AY <= 25 && m.cA <= 20 && m.cA1 <= 22 && m.cB <= 24) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.AY <= 28 && m.cA <= 24 && m.cA1 <= 26 && m.cB <= 28) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.AY <= 31 && m.cA <= 28 && m.cA1 <= 30 && m.cB <= 32) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
-            
-        case 'PE_SL':
-            if (!m.AY || !m.cA1 || !m.cB) return null;
-            // Lógica de tamanho para PÉ SL
-            if (m.AY <= 25 && m.cA1 <= 22 && m.cB <= 24) {
-                return { productLine: 'READYWRAP', size: 'PEQUENO' };
-            } else if (m.AY <= 28 && m.cA1 <= 26 && m.cB <= 28) {
-                return { productLine: 'READYWRAP', size: 'MÉDIO' };
-            } else if (m.AY <= 31 && m.cA1 <= 30 && m.cB <= 32) {
-                return { productLine: 'READYWRAP', size: 'GRANDE' };
-            }
-            break;
+        }
     }
-    
     return null;
 };
+
+// --- READYWRAP SIZING FUNCTIONS ---
+const findReadyWrapDedosPeSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+    const size = findSize(SIZES, [{ value: m.cA, ranges: [[18, 20.4], [20.5, 23.5], [23.6, 26], [26.1, 28.5], [28.6, 31]] }]);
+    return size ? { productLine: 'ReadyWrap DEDOS DO PÉ', size } : null;
+};
+
+const findReadyWrapPeCtSize = (m: MeasurementValues): SizingResult | null => {
+    if (m.iAY === undefined) return null;
+    if (m.iAY >= 16 && m.iAY <= 19) {
+        const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+        const size = findSize(SIZES, [
+            { value: m.cA, ranges: [[18, 20.4], [20.5, 23.5], [23.6, 26], [26.1, 28.5], [28.6, 31]] },
+            { value: m.cA1, ranges: [[20, 25], [24, 29], [28, 33], [32, 37], [36, 41]] },
+            { value: m.cB, ranges: [[18, 23], [20, 28], [25, 33], [30, 38], [35, 43]] },
+        ]);
+        return size ? { productLine: 'ReadyWrap PÉ CT', size, length: '16-19cm' } : null;
+    } else if (m.iAY >= 19 && m.iAY <= 22) {
+        const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+        const size = findSize(SIZES, [
+            { value: m.cA, ranges: [[18, 20.4], [20.5, 23.5], [23.6, 26], [26.1, 28.5], [28.6, 31]] },
+            { value: m.cA1, ranges: [[20, 25], [24, 29], [28, 33], [32, 37], [36, 41]] },
+            { value: m.cB, ranges: [[18, 23], [20, 28], [25, 33], [30, 38], [35, 43]] },
+        ]);
+        return size ? { productLine: 'ReadyWrap PÉ CT', size, length: '19-22cm' } : null;
+    }
+    return null;
+};
+
+const findReadyWrapPeSlSize = (m: MeasurementValues): SizingResult | null => {
+    if (m.iAY === undefined) return null;
+    if (m.iAY >= 16 && m.iAY <= 19) {
+        const SIZES = ['P', 'M', 'G', 'XG'];
+        const size = findSize(SIZES, [
+            { value: m.cA1, ranges: [[21, 24], [25, 28], [29, 32], [33, 36]] },
+            { value: m.cB, ranges: [[18, 23], [20, 28], [25, 33], [30, 38]] },
+        ]);
+        return size ? { productLine: 'ReadyWrap PÉ SL', size, length: '16-19cm' } : null;
+    } else if (m.iAY >= 19 && m.iAY <= 22) {
+        const SIZES = ['P', 'M', 'G', 'XG'];
+        const size = findSize(SIZES, [
+            { value: m.cA1, ranges: [[21, 24], [25, 28], [29, 32], [33, 36]] },
+            { value: m.cB, ranges: [[18, 23], [20, 28], [25, 33], [30, 38]] },
+        ]);
+        return size ? { productLine: 'ReadyWrap PÉ SL', size, length: '19-22cm' } : null;
+    }
+    return null;
+};
+
+const findReadyWrapPanturrilhaSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[18, 23], [20, 28], [25, 33], [30, 38], [35, 43]] },
+        { value: m.cC, ranges: [[28, 38], [33, 43], [38, 48], [43, 58], [53, 68]] },
+    ]);
+    if (!size || m.iBD === undefined) return null;
+
+    let length = m.iBD <= 30 ? 'até 30cm' : m.iBD <= 35 ? 'até 35cm' : null;
+    if (!length) return null;
+
+    return { productLine: 'ReadyWrap PANTURRILHA', size, length };
+};
+
+const findReadyWrapJoelhoSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+    const size = findSize(SIZES, [
+        { value: m.cD, ranges: [[28, 38], [33, 43], [38, 48], [43, 58], [53, 68]] },
+        { value: m.cE, ranges: [[38, 48], [45, 58], [52, 68], [59, 78], [66, 88]] },
+    ]);
+    return size ? { productLine: 'ReadyWrap JOELHO', size } : null;
+};
+
+const findReadyWrapCoxaSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG', 'XXG'];
+    const size = findSize(SIZES, [
+        { value: m.cE, ranges: [[38, 48], [45, 58], [52, 68], [59, 78], [66, 88]] },
+        { value: m.cG, ranges: [[48, 63], [58, 73], [68, 83], [78, 93], [88, 103]] },
+    ]);
+    if (!size || m.iEG === undefined) return null;
+
+    let length = m.iEG <= 25 ? 'até 25cm' : m.iEG <= 30 ? 'até 30cm' : null;
+    if (!length) return null;
+
+    return { productLine: 'ReadyWrap COXA', size, length };
+};
+
+const findReadyWrapBracoSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[13.5, 17], [15.5, 20], [17.5, 23], [19.5, 26]] },
+        { value: m.cE, ranges: [[19, 26], [24, 33], [29, 40], [30, 43]] },
+        { value: m.cG, ranges: [[22, 29], [26, 36], [31, 43], [36, 50]] },
+    ]);
+     if (!size || m.iBG === undefined) return null;
+
+    let length = m.iBG <= 43 ? 'até 43cm' : m.iBG <= 46 ? 'até 46cm' : m.iBG <= 49.5 ? 'até 49.5cm' : null;
+    if (!length) return null;
+    
+    // Remap length for 'G' and 'XG'
+    if (size === 'G' && m.iBG > 49) return null;
+    if (size === 'XG' && m.iBG > 49.5) return null;
+
+
+    return { productLine: 'ReadyWrap BRAÇO', size, length };
+};
+
+const findReadyWrapLuvaSize = (m: MeasurementValues): SizingResult | null => {
+    const SIZES = ['P', 'M', 'G', 'XG'];
+    const size = findSize(SIZES, [
+        { value: m.cB, ranges: [[13.5, 17], [15.5, 20], [17.5, 23], [19.5, 26]] },
+        { value: m.cA, ranges: [[18, 20], [20, 22], [22, 24], [24, 26]] },
+    ]);
+    if (!size || m.iAB === undefined) return null;
+
+    let length;
+    if (checkRange(m.iAB, 0, 12.5)) length = 'até 12.5cm';
+    else if (checkRange(m.iAB, 0, 13.5)) length = 'até 13.5cm';
+    else if (checkRange(m.iAB, 0, 14.5)) length = 'até 14.5cm';
+    else if (checkRange(m.iAB, 0, 15.5)) length = 'até 15.5cm';
+    
+    // Check if length is compatible with size
+    if (size === 'P' && m.iAB > 12.5) return null;
+    if (size === 'M' && m.iAB > 13.5) return null;
+    if (size === 'G' && m.iAB > 14.5) return null;
+    if (size === 'XG' && m.iAB > 15.5) return null;
+    
+    return size && length ? { productLine: 'ReadyWrap LUVA', size, length } : null;
+};
+
 
 // ===================================================================================
 // MASTER SIZING DISPATCHER
 // ===================================================================================
 
-const sizingFunctionMap: { [key: string]: (m: MeasurementValues) => SizingResult | SizingResult[] | null } = {
-    // Meias de Compressão
-    'BD': findLeglineSize,
-    'AD': findLeglineSize,
-    'AGH': findLeglineSize,
-    'AT': findLeglineSize,
-    'ATQ': findLeglineSize,
-    'ATM': findLeglineSize,
-    'AGG': findLeglineSize,
-    'BH': findUltraline4000ArmSize,
-    'ZH': findUltraline4000ArmSize,
-    
-    // ReadyWrap
-    'BRACO': (m) => findReadyWrapSize('BRACO', m),
-    'COXA': (m) => findReadyWrapSize('COXA', m),
-    'LUVA': (m) => findReadyWrapSize('LUVA', m),
-    'JOELHOS': (m) => findReadyWrapSize('JOELHOS', m),
-    'DEDOS_DO_PE': (m) => findReadyWrapSize('DEDOS_DO_PE', m),
-    'PANTURRILHA_RW': (m) => findReadyWrapSize('PANTURRILHA_RW', m),
-    'PE_CT': (m) => findReadyWrapSize('PE_CT', m),
-    'PE_SL': (m) => findReadyWrapSize('PE_SL', m),
-    
-    // Outras funções de tamanho
-    'ULTRALINE_4000_LEG': findUltraline4000LegSize,
-    'VENOSAN_6000': findVenosan6000Size,
-    'COMFORTLINE_COTTON_LEG': findComfortlineCottonLegSize,
-    'COMFORTLINE_LEG': findComfortlineLegSize,
-    'SUPPORTLINE_SOFT': findSupportlineSoftSize,
-    'SPORTACTIVE': findSportactiveSize,
-    'FLAT': (m) => findFlatSize(m)[0] || null,
-    'ULCER_KIT': (m) => findUlcerKitSize(m)[0] || null,
-    'AES': findAesSize,
-    'ULTRALINE_4000_ARM': findUltraline4000ArmSize,
-    'COMFORTLINE_COTTON_ARM': findComfortlineCottonArmSize,
-    'COMFORTLINE_ARM': findComfortlineArmSize,
-};
+export const findSizeForModel = (model: ProductModel, measurements: MeasurementValues): SizingResult[] => {
+    const results: SizingResult[] = [];
+    const { id, category } = model;
 
-export const findSizeForModel = (modelId: string, measurements: MeasurementValues): SizingResult[] => {
-    const sizingFunction = sizingFunctionMap[modelId];
-    if (!sizingFunction) {
-        console.warn(`No sizing function found for model ID: ${modelId}`);
-        return [];
+    if (category === ProductCategory.READY_WRAP) {
+        const readyWrapSizers: { [key: string]: (m: MeasurementValues) => SizingResult | null } = {
+            'BRACO': findReadyWrapBracoSize,
+            'COXA': findReadyWrapCoxaSize,
+            'LUVA': findReadyWrapLuvaSize,
+            'JOELHOS': findReadyWrapJoelhoSize,
+            'DEDOS_DO_PE': findReadyWrapDedosPeSize,
+            'PANTURRILHA_RW': findReadyWrapPanturrilhaSize,
+            'PE_CT': findReadyWrapPeCtSize,
+            'PE_SL': findReadyWrapPeSlSize,
+        };
+        const sizer = readyWrapSizers[id];
+        if (sizer) {
+            const result = sizer(measurements);
+            if (result) results.push(result);
+        }
+    } else { // Compression Stockings
+        const sizerMap: { [key: string]: ((m: MeasurementValues) => SizingResult | null)[] } = {
+            'AD': [
+                findLeglineSize, findUltraline4000LegSize, findVenosan6000Size,
+                findComfortlineCottonLegSize, findComfortlineLegSize, findSupportlineSoftSize,
+                findAesSize, findUlceraidSize, findUlcercomfortSize,
+                (m) => findFlatSize(m, 'FLAT SOFT'), (m) => findFlatSize(m, 'FLAT STRONG')
+            ],
+            'AGH': [
+                findLeglineSize, findUltraline4000LegSize, findVenosan6000Size,
+                findComfortlineLegSize, findAesSize
+            ],
+            'AGG': [
+                findLeglineSize, findUltraline4000LegSize, findVenosan6000Size,
+                findComfortlineLegSize, findAesSize
+            ],
+            'AT': [
+                findLeglineSize, findUltraline4000LegSize, findVenosan6000Size, findComfortlineLegSize
+            ],
+             'ATM': [
+                findLeglineSize, findUltraline4000LegSize, findVenosan6000Size, findComfortlineLegSize
+            ],
+            'ATQ': [
+                findLeglineSize // The function itself handles the "Queen" logic
+            ],
+            'BD': [
+                findSportactiveSize
+            ],
+            'BH': [
+                findUltraline4000ArmSize, findComfortlineCottonArmSize
+            ],
+             'ZH': [
+                findUltraline4000ArmSize, findComfortlineCottonArmSize
+            ]
+        };
+        
+        const sizersForModel = sizerMap[id] || [];
+        sizersForModel.forEach(sizer => {
+            const result = sizer(measurements);
+            if (result) {
+                results.push(result);
+            }
+        });
     }
 
-    const result = sizingFunction(measurements);
+    // Filter out duplicates
+    const uniqueResults = Array.from(new Map(results.map(item => [`${item.productLine}-${item.size}-${item.length ?? ''}`, item])).values());
     
-    if (!result) return [];
-    
-    // Se for um array, retorna como está
-    if (Array.isArray(result)) {
-        return result;
-    }
-    
-    // Se for um único resultado, retorna em um array
-    return [result];
+    return uniqueResults;
 };

@@ -33,7 +33,8 @@ const App: React.FC = () => {
 
     // Simulate calculation time
     setTimeout(() => {
-        const calculatedResults = findSizeForModel(selectedModel.id, values);
+        // FIX: Pass the entire selectedModel object, not just its ID.
+        const calculatedResults = findSizeForModel(selectedModel, values);
         setResults(calculatedResults);
         setStep(AppStep.RESULT_DISPLAY);
         setIsLoading(false);

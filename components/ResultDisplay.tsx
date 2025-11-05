@@ -2,62 +2,45 @@ import React from 'react';
 import { ProductModel, SizingResult, MeasurementValues } from '../types';
 import { MEASUREMENTS } from '../data';
 
-// Função para obter o caminho da imagem da caixa com base no nome do produto
-const getBoxImagePath = (productLine: string, side: 'left' | 'right') => {
+// Função para obter o caminho da imagem do produto
+const getProductImagePath = (productLine: string) => {
+  // URL base para as imagens no GitHub
+  const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img';
+  
   // Mapeia os nomes dos produtos para os nomes dos arquivos
-  const productMap: { [key: string]: { folder: string; prefix: string } } = {
+  const productImageMap: { [key: string]: string } = {
     // Meias de Compressão
-    'LEGLINE': { folder: 'MEIAS CAIXAS', prefix: 'LEGLINE 15-23' },
-    'ULTRALINE 4000': { folder: 'MEIAS CAIXAS', prefix: 'ULTRALINE' },
-    'VENOSAN 6000': { folder: 'MEIAS CAIXAS', prefix: '6000' },
-    'COMFORTLINE': { folder: 'MEIAS CAIXAS', prefix: 'COMFORTLINE' },
-    'COMFORTLINE COTTON': { folder: 'MEIAS CAIXAS', prefix: 'COMFORTLINE COTTON' },
-    'SUPPORTLINE SOFT': { folder: 'MEIAS CAIXAS', prefix: 'SUPPORTLINE SOFT' },
-    'SPORTACTIVE': { folder: 'MEIAS CAIXAS', prefix: 'SPORTACTIVE' },
-    'FLAT SOFT': { folder: 'MEIAS CAIXAS', prefix: 'FLAT SOFT (NOVA COR)' },
-    'FLAT STRONG': { folder: 'MEIAS CAIXAS', prefix: 'FLAT STRONG' },
-    'ULCERAID': { folder: 'MEIAS CAIXAS', prefix: 'ULCERAID' },
-    'ULCERCOMFORT': { folder: 'MEIAS CAIXAS', prefix: 'ULCERCOMFORT COM ZIPER' },
-    'AES': { folder: 'MEIAS CAIXAS', prefix: 'AES' },
+    'LEGLINE': 'MEIAS_CAIXAS/LEGLINE_15-23_ESQUERDA.png',
+    'LEGLINE QUEEN': 'MEIAS_CAIXAS/LEGLINE_15-23_ESQUERDA.png',
+    'ULTRALINE 4000': 'MEIAS_CAIXAS/ULTRALINE_ESQUERDA.png',
+    'VENOSAN 6000': 'MEIAS_CAIXAS/6000_ESQUERDA.png',
+    'COMFORTLINE': 'MEIAS_CAIXAS/COMFORTLINE_ESQUERDA.png',
+    'COMFORTLINE COTTON': 'MEIAS_CAIXAS/COMFORTLINE_COTTON_ESQUERDA.png',
+    'SUPPORTLINE SOFT': 'MEIAS_CAIXAS/SUPPORTLINE_SOFT_ESQUERDA.png',
+    'SPORTACTIVE': 'MEIAS_CAIXAS/SPORTACTIVE_ESQUERDA.png',
+    'FLAT SOFT': 'MEIAS_CAIXAS/FLAT_SOFT_ESQUERDA.png',
+    'FLAT STRONG': 'MEIAS_CAIXAS/FLAT_STRONG_ESQUERDA.png',
+    'ULCERAID': 'MEIAS_CAIXAS/ULCERAID_ESQUERDA.png',
+    'ULCERCOMFORT': 'MEIAS_CAIXAS/ULCERCOMFORT_ESQUERDA.png',
+    'AES': 'MEIAS_CAIXAS/AES_ESQUERDA.png',
+    'BD': 'MEIAS_CAIXAS/SPORTACTIVE_ESQUERDA.png',
+    'ZH': 'MEIAS_CAIXAS/ZH_ESQUERDA.png',
     
-    // ReadyWrap - Mapeando tanto os nomes formatados quanto os IDs originais
-    'BRAÇO': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - BRAÇO' },
-    'ReadyWrap BRACO': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - BRAÇO' },
-    'COXA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - COXA' },
-    'ReadyWrap COXA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - COXA' },
-    'LUVA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - LUVA' },
-    'ReadyWrap LUVA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - LUVA' },
-    'JOELHO': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - JOELHO' },
-    'ReadyWrap JOELHOS': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - JOELHO' },
-    'DEDOS DO PÉ': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - DEDOS DO PÉ' },
-    'ReadyWrap DEDOS_DO_PE': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - DEDOS DO PÉ' },
-    'PANTURRILHA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PANTURRILHA' },
-    'ReadyWrap PANTURRILHA': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PANTURRILHA' },
-    'PÉ CT': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PÉ CT' },
-    'ReadyWrap PE_CT': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PÉ CT' },
-    'PÉ SL': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PÉ SL' },
-    'ReadyWrap PE_SL': { folder: 'READYWRAP CAIXAS', prefix: 'READYWRAP® - PÉ SL' }
+    // ReadyWrap
+    'ReadyWrap BRAÇO': 'READYWRAP_CAIXAS/READYWRAP_BRACO.png',
+    'ReadyWrap COXA': 'READYWRAP_CAIXAS/READYWRAP_COXA.png',
+    'ReadyWrap LUVA': 'READYWRAP_CAIXAS/READYWRAP_LUVA.png',
+    'ReadyWrap JOELHO': 'READYWRAP_CAIXAS/READYWRAP_JOELHO.png',
+    'ReadyWrap DEDOS DO PÉ': 'READYWRAP_CAIXAS/READYWRAP_DEDOS_DO_PE.png',
+    'ReadyWrap PANTURRILHA': 'READYWRAP_CAIXAS/READYWRAP_PANTURRILHA.png',
+    'ReadyWrap PÉ CT': 'READYWRAP_CAIXAS/READYWRAP_PE_CT.png',
+    'ReadyWrap PÉ SL': 'READYWRAP_CAIXAS/READYWRAP_PE_SL.png'
   };
 
-  const productInfo = productMap[productLine] || { folder: 'MEIAS CAIXAS', prefix: productLine };
-  
-  // Log para depuração
-  console.log('Product Line:', productLine);
-  console.log('Product Info:', productInfo);
-  
-  if (productInfo.folder === 'READYWRAP CAIXAS') {
-    // Para READYWRAP, usamos a mesma imagem para ambos os lados
-    const imagePath = `/img/${productInfo.folder}/${productInfo.prefix}.png`;
-    console.log('Image Path:', imagePath);
-    return imagePath;
-  } else {
-    // Para outros produtos, usamos imagens diferentes para frente e verso
-    const sideText = side === 'left' ? 'ESQUERDA' : 'DIREITA';
-    const imagePath = `/img/${productInfo.folder}/${productInfo.prefix} - ${sideText}.png`;
-    console.log('Image Path:', imagePath);
-    return imagePath;
-  }
+  const imagePath = productImageMap[productLine] || '';
+  return imagePath ? `${GITHUB_BASE_URL}/${imagePath}` : '';
 };
+
 
 interface ResultDisplayProps {
   model: ProductModel;
@@ -79,8 +62,8 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
             {Object.entries(measurements).map(([key, value]) => (
               value && (
                 <div key={key}>
-                  <span className="font-semibold text-gray-600">{MEASUREMENTS[key]?.description || key}:</span>{' '}
-                  <span className="text-gray-800">{value} {key === 'SHOE_SIZE' ? '' : 'cm'}</span>
+                  <span className="font-semibold text-gray-600">{MEASUREMENTS[key]?.name || key}:</span>{' '}
+                  <span className="text-gray-800">{value} {MEASUREMENTS[key]?.type === 'circumference' || MEASUREMENTS[key]?.type === 'length' ? 'cm' : ''}</span>
                 </div>
               )
             ))}
@@ -91,57 +74,45 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
           <div className="space-y-6">
             {results.map((result, index) => (
               <div key={index} className="bg-white border-l-4 border-green-500 p-4 rounded-lg shadow-md">
-                <div className="flex flex-col md:flex-row gap-4">
-                  {/* Imagens das caixas */}
-                  <div className={`flex-1 flex items-center justify-center bg-gray-100 rounded-lg ${
-                    result.productLine.includes('Meias de Compressão') 
-                      ? 'min-h-[250px] h-[250px]' 
-                      : 'min-h-[455px] h-[455px]'
-                  } border border-gray-200 overflow-visible p-0 m-0 relative`}>
-                    <div className="w-full h-full flex items-center justify-center p-0 m-0 relative">
-                      <img 
-                        src={getBoxImagePath(result.productLine, 'left')} 
+                <div className="flex flex-col md:flex-row gap-4 items-center">
+                  {/* Imagem do produto */}
+                  <div className="flex-shrink-0 w-full md:w-1/3 flex items-center justify-center p-2">
+                    <img 
+                        src={getProductImagePath(result.productLine)} 
                         alt={result.productLine}
-                        className={result.productLine.includes('Meias de Compressão') 
-                          ? 'w-auto h-auto max-w-[90%] max-h-[90%] object-contain m-0 p-0' 
-                          : 'w-auto h-auto max-w-full max-h-full object-contain m-0 p-0'}
+                        className="max-w-full max-h-48 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
-                          console.error('Erro ao carregar a imagem:', result.productLine);
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const errorText = document.createElement('p');
+                            errorText.textContent = 'Imagem não encontrada';
+                            errorText.className = 'text-xs text-red-500';
+                            parent.appendChild(errorText);
+                          }
+                          console.error('Erro ao carregar a imagem do produto:', result.productLine);
                         }}
-                        style={{ 
-                          width: 'auto',
-                          height: 'auto',
-                          objectFit: 'contain',
-                          margin: 0,
-                          padding: 0,
-                          display: 'block'
-                        }}/>
-                    </div>
+                      />
                   </div>
                   
                   {/* Informações do produto */}
                   <div className="flex-1">
                     <p className="text-sm font-semibold text-green-700">{result.productLine}</p>
-                    <p className="text-2xl font-bold text-gray-800 mt-2">
+                    <p className="text-2xl font-bold text-gray-800 mt-1">
                       Tamanho: {result.size}
-                      {result.length && <span className="block sm:inline">, Comprimento: {result.length}</span>}
                     </p>
+                    {result.length && <p className="text-lg text-gray-700">Comprimento: {result.length}</p>}
                     {result.notes && <p className="text-sm text-gray-600 mt-2">{result.notes}</p>}
-                    
-                    <button className="mt-4 text-sm text-green-600 hover:text-green-800 font-medium">
-                      Ver detalhes do produto →
-                    </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="text-center py-8">
-            <p className="text-red-500">Não foi possível determinar o tamanho com as medidas fornecidas.</p>
-            <p className="text-gray-600 mt-2">Por favor, verifique as medidas e tente novamente.</p>
+          <div className="text-center py-8 bg-yellow-50 rounded-lg">
+            <p className="text-lg font-semibold text-yellow-800">Nenhum produto compatível encontrado.</p>
+            <p className="text-gray-600 mt-2">Suas medidas não se encaixam em nenhum de nossos tamanhos padrão para os produtos aplicáveis. Por favor, verifique os valores inseridos ou entre em contato com um especialista.</p>
           </div>
         )}
 
@@ -150,7 +121,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ model, results, measureme
             onClick={onStartOver}
             className="px-6 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors"
           >
-            Voltar ao Início
+            Fazer Nova Consulta
           </button>
         </div>
       </div>

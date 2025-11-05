@@ -14,17 +14,17 @@ interface InputFieldProps {
   onChange: (id: string, value: string) => void;
 }
 
-// Componente InputField movido para fora do MeasurementForm para evitar recriação
-// e corrigir problemas de tipagem. Agora é um componente controlado com value e onChange.
 const InputField: React.FC<InputFieldProps> = ({ id, value, onChange }) => {
   const measurement = MEASUREMENTS[id];
   if (!measurement) return null;
 
+  const isShoeSize = measurement.type === 'shoe_size';
+
   return (
     <div className="mb-4">
       <div className="flex items-center mb-1">
-        <div className="bg-gray-200 text-gray-700 font-bold text-sm rounded-md px-3 py-1 mr-3">
-          {id}
+        <div className="bg-gray-200 text-gray-700 font-bold text-sm rounded-md px-3 py-1 mr-3 w-12 text-center">
+          {id.replace(/_/g, ' ')}
         </div>
         <div>
           <label htmlFor={id} className="block text-sm font-bold text-gray-700">
@@ -38,9 +38,9 @@ const InputField: React.FC<InputFieldProps> = ({ id, value, onChange }) => {
         id={id}
         value={value}
         onChange={e => onChange(id, e.target.value)}
-        placeholder={measurement.type === 'shoe_size' ? 'Número do pé' : 'Em cm'}
+        placeholder={isShoeSize ? 'Número do pé' : 'Em cm'}
         className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-        step="0.1"
+        step={isShoeSize ? "1" : "0.1"}
         min="0"
       />
     </div>
@@ -52,8 +52,16 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
   const [error, setError] = useState('');
 
   const handleInputChange = (id: string, value: string) => {
-    const numValue = value === '' ? undefined : parseFloat(value);
-    setValues(prev => ({ ...prev, [id]: numValue }));
+    let numValue: number | undefined;
+    if (value === '') {
+        numValue = undefined;
+    } else {
+        numValue = MEASUREMENTS[id]?.type === 'shoe_size' 
+            ? parseInt(value, 10) 
+            : parseFloat(value);
+    }
+    
+    setValues(prev => ({ ...prev, [id]: isNaN(numValue!) ? undefined : numValue }));
   };
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -70,6 +78,9 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
     onSubmit(values as MeasurementValues);
   };
 
+  const allMeasurements = [...model.requiredMeasurements, ...(model.specialInputs || [])];
+  const uniqueMeasurements = [...new Set(allMeasurements)];
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4">
       <h2 className="text-lg font-semibold text-green-700 mb-1">Modelo selecionado</h2>
@@ -79,15 +90,7 @@ const MeasurementForm: React.FC<MeasurementFormProps> = ({ model, onBack, onSubm
 
       <div className="grid md:grid-cols-2 gap-12">
         <form onSubmit={handleSubmit}>
-          {model.requiredMeasurements.map(id => (
-            <InputField
-              key={id}
-              id={id}
-              value={values[id] || ''}
-              onChange={handleInputChange}
-            />
-          ))}
-          {model.specialInputs?.map(id => (
+          {uniqueMeasurements.map(id => (
             <InputField
               key={id}
               id={id}
