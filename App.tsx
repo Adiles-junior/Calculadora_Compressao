@@ -69,7 +69,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen text-gray-800 bg-gray-100" style={{ backgroundImage: "url('/img/IMAGEM DE TELA DE FUNDO.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen text-gray-800 bg-gray-100" style={{ backgroundImage: "url('https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/IMAGEM_DE_TELA_DE_FUNDO.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="container mx-auto px-4">
         <header className="py-6 flex justify-center items-center bg-white/80 rounded-b-xl shadow-md">
             <img src="/img/LOGOTIPO.png" alt="Logotipo" className="h-16 sm:h-20 object-contain" />

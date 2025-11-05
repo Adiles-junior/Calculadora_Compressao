@@ -2,7 +2,7 @@
   <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/LOGOTIPO.png" alt="Logotipo da Aplicação" width="300"/>
   <h1>Calculadora de Tamanho para Meias de Compressão</h1>
   <p>Solução completa para determinação do tamanho ideal de meias de compressão médica e produtos ReadyWrap</p>
-  <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/IMAGEM_DE_TELA_DE_FUNDO.png" alt="Exemplo de medições" style="max-width: 100%; border-radius: 8px; margin: 20px 0;"/>
+  <img src="https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/refs/heads/main/img/IMAGEM_DE_TELA_DE_FUNDO.png" alt="Exemplo de medições" style="max-width: 100%; border-radius: 8px; margin: 20px 0;"/>
 </div>
 
 ## 📋 Sobre o Projeto
