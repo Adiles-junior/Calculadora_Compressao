@@ -69,27 +69,10 @@ const App: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen text-gray-800 bg-gray-100" style={{ 
-      backgroundImage: 'url(https://raw.githubusercontent.com/Adiles-junior/Calculadora_Compressao/main/img/IMAGEM_DE_TELA_DE_FUNDO.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
-      minHeight: '100vh',
-      width: '100%',
-      position: 'relative',
-      zIndex: 1
-    }}>
-      <div className="container mx-auto px-4">
-        <header className="py-6 flex justify-center items-center bg-white/80 rounded-b-xl shadow-md">
-            <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/LOGOTIPO.png" alt="Logotipo" className="h-16 sm:h-20 object-contain" />
-=======
     <div className="min-h-screen text-gray-800 bg-gray-100" style={{ backgroundImage: "url('/img/IMAGEM DE TELA DE FUNDO.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="container mx-auto px-4">
         <header className="py-6 flex justify-center items-center bg-white/80 rounded-b-xl shadow-md">
             <img src="/img/LOGOTIPO.png" alt="Logotipo" className="h-16 sm:h-20 object-contain" />
->>>>>>> 396693ef3a99c3257dccf6570209bb4e58d46792
         </header>
         <main className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl mb-16">
             <Stepper currentStep={step} />

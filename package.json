@@ -9,22 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "cloudinary-react": "^1.8.1",
-=======
->>>>>>> 396693ef3a99c3257dccf6570209bb4e58d46792
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
-<<<<<<< HEAD
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.16",
-=======
->>>>>>> 396693ef3a99c3257dccf6570209bb4e58d46792
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }
