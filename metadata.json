@@ -1,0 +1,5 @@
+{
+  "name": "Calculadora de Tamanho de Compressão",
+  "description": "Uma aplicação para ajudar os usuários a encontrar o tamanho ideal de meias de compressão e produtos ReadyWrap com base em suas medidas corporais.",
+  "requestFramePermissions": []
+}
