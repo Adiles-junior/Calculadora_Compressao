@@ -1,63 +1,112 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/LOGOTIPO.png" alt="Logotipo da Aplicação" width="300"/>
+  <h1>Calculadora de Tamanho para Meias de Compressão</h1>
+  <p>Solução completa para determinação do tamanho ideal de meias de compressão médica e produtos ReadyWrap</p>
+  <img src="https://github.com/Adiles-junior/Calculadora_Compressao/raw/main/img/IMAGEM_DE_TELA_DE_FUNDO.png" alt="Exemplo de medições" style="max-width: 100%; border-radius: 8px; margin: 20px 0;"/>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Sobre o Projeto
 
-Currently, two official plugins are available:
+A Calculadora de Tamanho para Meias de Compressão é uma aplicação web avançada desenvolvida para auxiliar profissionais de saúde e pacientes na determinação precisa do tamanho de meias de compressão médica e produtos ReadyWrap. A ferramenta utiliza um algoritmo especializado que considera múltiplas medidas corporais para fornecer recomendações precisas, garantindo conforto, eficácia no tratamento e melhor experiência do usuário.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades Principais
 
-## React Compiler
+- **Cálculo Inteligente**
+  - Algoritmo preciso baseado em medidas corporais individuais
+  - Suporte a diferentes classes de compressão
+  - Cálculo automático de tamanho para múltiplas linhas de produtos
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Interface Amigável**
+  - Design responsivo que funciona em qualquer dispositivo
+  - Formulário intuitivo para entrada de medidas
+  - Visualização clara e organizada dos resultados
+  - Modo escuro/claro para melhor acessibilidade
 
-Note: This will impact Vite dev & build performances.
+- **Suporte a Produtos**
+  - Cálculo para meias de compressão médica
+  - Suporte a produtos ReadyWrap
+  - Visualização otimizada para cada tipo de produto
 
-## Expanding the ESLint configuration
+- **Experiência do Usuário**
+  - Visualização em tamanho real dos produtos
+  - Animações suaves e feedback visual
+  - Histórico de cálculos recentes
+  - Exportação de resultados
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧦 Linhas de Produtos Suportadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Meias de Compressão
+- **Legline** - Compressão padrão para uso diário
+- **Ultraline 4000** - Alta tecnologia e conforto
+- **Venosan 6000** - Máxima compressão e durabilidade
+- **Comfortline Cotton** - Conforto natural em algodão
+- **Supportline Soft** - Suporte suave para uso prolongado
+- **Sportactive** - Ideal para atividades físicas
+- **Flat** - Design discreto e confortável
+- **Kits para Úlceras** - Tratamento especializado
+- **AES** - Tecnologia avançada de compressão
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Produtos ReadyWrap
+- **ReadyWrap Standard** - Para compressão personalizável
+- **ReadyWrap Plus** - Com tecnologia avançada de ajuste
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tecnologias Utilizadas
+
+- **Frontend**
+  - React 19 com TypeScript
+  - Vite para desenvolvimento rápido
+  - Tailwind CSS para estilização
+  - React Icons para ícones
+  - React Hook Form para validação
+  - Framer Motion para animações
+
+- **Ferramentas**
+  - ESLint e Prettier para padronização de código
+  - Git para controle de versão
+  - GitHub Actions para CI/CD
+
+## 🚀 Como Executar Localmente
+
+**Pré-requisitos:**
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+
+### Passo a Passo
+
+1. **Clonar o repositório**
+   ```bash
+   git clone https://github.com/Adiles-junior/Calculadora_Compressao.git
+   cd Calculadora_Compressao
+   ```
+
+2. **Instalar as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+
+4. **Acessar a aplicação**
+   Abra seu navegador e acesse:
+   ```
+   http://localhost:3000
+   ```
+
+## 📦 Como Construir para Produção
+
+Para criar uma versão otimizada para produção:
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Os arquivos de produção serão gerados na pasta `dist/`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🤝 Contribuição
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
       // Enable lint rules for React
       reactX.configs['recommended-typescript'],
       // Enable lint rules for React DOM
